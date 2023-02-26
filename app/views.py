@@ -37,8 +37,8 @@ class ArtistSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class WorkList(APIView):
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
         queryset = Work.objects.all()
@@ -70,8 +70,8 @@ def create_client(sender, instance, created, **kwargs):
 class ArtistList(generics.ListAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         queryset = Work.objects.all()
@@ -86,8 +86,8 @@ class ArtistList(generics.ListAPIView):
 class ArtistList(generics.ListAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    authentication_classes = [SessionAuthentication, BasicAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    # authentication_classes = [SessionAuthentication, BasicAuthentication]
+    # permission_classes = [permissions.IsAuthenticated]
 
 class ClientRegistration(generics.CreateAPIView):
     queryset = Client.objects.all()
